@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Gizmo-Bot" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#070912" />
+  <link rel="apple-touch-icon" href="assets/gizmo_idle.png" />
+  <title>CHROME HILL ZONE - ACT 1 | Gizmo-Bot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Portrait Orientation Prompt for Mobile/iOS -->
+  <div id="rotate-notice" aria-hidden="true">
+    <div class="rotate-card">
+      <div class="rotate-icon">📱↻</div>
+      <p>ROTATE DEVICE TO LANDSCAPE FOR FULLSCREEN ARCADE MODE</p>
+      <span class="rotate-sub">(Or play below with touch controls!)</span>
+    </div>
+  </div>
+
+  <div id="game-wrapper">
+    <div id="game-container">
+      <canvas id="game-canvas" width="960" height="540"></canvas>
+
+      <!-- Top-Right Quick Action Bar (iOS / Touch + Desktop) -->
+      <div id="hud-top-actions">
+        <button id="restart-btn" type="button" aria-label="Restart Act">↻ RESTART</button>
+        <button id="mute-btn" type="button" aria-label="Toggle Sound">🔊 SYNTH: ON</button>
+      </div>
+
+      <!-- iOS / Mobile Multi-Touch Virtual Gamepad Overlay -->
+      <div id="touch-controls" aria-label="Touch Gamepad">
+        <div class="touch-dpad">
+          <button id="btn-left" class="touch-btn dpad-btn" type="button" aria-label="Move Left">◀</button>
+          <button id="btn-down" class="touch-btn dpad-btn dpad-down" type="button" aria-label="Crouch or Roll">▼</button>
+          <button id="btn-right" class="touch-btn dpad-btn" type="button" aria-label="Move Right">▶</button>
+        </div>
+
+        <div class="touch-actions">
+          <button id="btn-spindash" class="touch-btn action-spin" type="button" aria-label="Spin Dash">
+            <span>⚡</span>
+            <small>DASH</small>
+          </button>
+          <button id="btn-jump" class="touch-btn action-jump" type="button" aria-label="Jump">
+            <span>A</span>
+            <small>JUMP</small>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="controls-bar">
+      <div class="control-group">
+        <span class="key">A / D</span> or <span class="key">◀ / ▶</span> Move &amp; Accelerate
+      </div>
+      <div class="control-group">
+        <span class="key">S / ▼</span> Crouch / Roll ( while moving )
+      </div>
+      <div class="control-group">
+        <span class="key">▼ + SPACE</span> or <span class="key">⚡ DASH</span> Spin Dash
+      </div>
+      <div class="control-group">
+        <span class="key">SPACE / Z / W</span> Jump / Spin Attack
+      </div>
+      <div class="control-group">
+        <span class="key">R</span> Restart Act
+      </div>
+    </div>
+  </div>
+
+  <script src="assets.js"></script>
+  <script src="audio.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
